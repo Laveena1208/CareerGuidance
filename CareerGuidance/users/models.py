@@ -1,50 +1,74 @@
 from django.db import models
-from django.utils.text import slugify
-from django.contrib.auth.models import User
+from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import AbstractUser , BaseUserManager # change
+from .manager import UserManager #chnage
 
 
-# Create your models here.
+#chnage user class pura
+class  User(models.Model):
+    username = None
+    email = models.EmailField(unique = True, blank=True)
+    first_name  = models.CharField(max_length=100)
+    last_name   =  models.CharField(max_length=100)
+    mobile = models.CharField(max_length=100)
+    aadhar_no = models.CharField(max_length=100)
+    email_token = models.CharField(max_length=100, null = True, blank = True)
+    forget_password = models.CharField(max_length=100, null = True, blank = True)
+    last_login = models.CharField(max_length=100, null = True, blank = True)
+    last_logout = models.CharField(max_length=100, null = True, blank = True)
+    password = models.CharField(max_length=100, default = "")
 
-class Register(models.Model):
-
-    id = models.IntegerField(max_length = 100,primary_key=True)
-    username = models.CharField(max_length = 100,unique=True)
-    password = models.CharField(max_length=50)
-    name = models.CharField(max_length = 100)
-
-    def __init__(self,username,password,name):
-        self.username = username
-        self.password = password
-        self.name = name
-    @staticmethod
-    def exists(username) ->bool:
-            user = Users.get_user_by_username(username)
-            return user!=None
-    @staticmethod
-    def get_user_by_username(username):
-        return Users.query.filter_by(username = username).first()
-
-    def save(self, *args, **kwargs):
-        value = slugify(self.name)
-        self.id = value
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
+    objects = UserManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
     
-    class Meta:
-        db_table = "Users_register"
-        
 
-class Login(models.Model):
+### ya tak
 
-    password = models.CharField(max_length=50)
-    emailid = models.EmailField(max_length = 100)
+class After10(models.Model):
+    question=models.CharField(max_length=150,unique=True)
 
-    def __init__(self,username,password,name):
-        self.password = password
-        self.emailid = emailid
+class After12Arts(models.Model):
+    question=models.CharField(max_length=150,unique=True)
 
-    class Meta:
-        db_table = "Users_login"
-        
+class After12Commerce(models.Model):
+    question=models.CharField(max_length=150,unique=True)
+
+class After12Science(models.Model):
+    question=models.CharField(max_length=150,unique=True)
+
+class After10colleges(models.Model):
+    college_id = models.AutoField
+    college_name = models.CharField(max_length=1000 ,  default="")
+    college_address = models.CharField(max_length=1000 ,  default="")
+    phone_number = PhoneNumberField(default="")
+    website = models.URLField(max_length = 500, default="")
+
+class After12engcolleges(models.Model):
+    college_id = models.AutoField
+    college_name = models.CharField(max_length=1000,  default="")
+    college_address = models.CharField(max_length=1000,  default="")
+    phone_number = PhoneNumberField(default="")
+    website = models.URLField(max_length = 500, default="")
+
+
+class After12medicolleges(models.Model):
+    college_id = models.AutoField
+    college_name = models.CharField(max_length=1000,  default="")
+    college_address = models.CharField(max_length=1000,  default="")
+    phone_number = PhoneNumberField(default="")
+    website = models.URLField(max_length = 500, default="")
+
+class After12commcolleges(models.Model):
+    college_id = models.AutoField
+    college_name = models.CharField(max_length=1000,  default="")
+    college_address = models.CharField(max_length=1000,  default="")
+    phone_number = PhoneNumberField(default="")
+    website = models.URLField(max_length = 500, default="")
+
+class After12artscolleges(models.Model):
+    college_id = models.AutoField
+    college_name = models.CharField(max_length=1000,  default="")
+    college_address = models.CharField(max_length=1000,  default="")
+    phone_number = PhoneNumberField(default="")
+    website = models.URLField(max_length = 500, default="")

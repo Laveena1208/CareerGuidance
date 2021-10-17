@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block body_content %}      
+
+{% load crispy_forms_tags %}
+{%load static %} 
+
+<h1><center> After 12th Assessment Test...! </center></h1>
+
+<h2>Test Instructions:</h2>
+<p>This test consists of some questions that you will have to rate on the basis of how much you would enjoy performing each on a scale of (1) strongly dislike (2) slightly dislike (3) neither like nor dislike (4) slightly enjoy (5) strongly enjoy. This test will help you choose a career path based on your personality type and your interests in a particular field or subject.</p>
+<big>Make sure you answer ALL the questions.</big>
+<br><br><br><br>
+<h2><big><center>Begin your Assessment</center></big></h2>
+
+<form method="POST" action="/result.html">
+
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+			<th scope="col">Question</th>
+			<th scope="col">Dislike</th>
+			<th scope="col"></th>
+			<th scope="col">Neutral</th>
+			<th scope="col"></th>
+			<th scope="col">Enjoy</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for question in questions %}
+			<tr>
+			<td><big>{{question.question}}</big></td>
+			
+			<td align="center"><input type="radio" name="{{question.id }}" value="0" /></td>
+			<td align="center"><input type="radio" name="{{question.id }}" value="2" /></td>
+			<td align="center"><input type="radio" name="{{question.id }}" value="1" /></td>
+			<td align="center"><input type="radio" name="{{question.id }}" value="3" /></td>
+			<td align="center"><input type="radio" name="{{question.id }}" value="4" /></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+		<center><input class="btn btn-primary" type="submit" value="Submit" style = "font-size:20px" onclick="myFunction()" /></center>
+	</table>
+
+</form>
+
+{% endblock %}
+
+{% block javascript %}
+	<script>
+		function myFunction() {
+		alert("Congratulations! You have finished the evaluation of your career interests and you're well on your way to discovering your ideal career path.");
+		}
+	</script>    
+{% endblock javascript %}

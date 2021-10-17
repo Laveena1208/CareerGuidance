@@ -1,10 +1,11 @@
 {% extends "base.html"%}
+{% load static %}         
 {% block body_content %}
-{%load static%}         
+<br> <br>
         <div>
             <div>
                 <div id="carouselExampleIndicators" class="carousel slide
-                    container" data-ride="carousel">
+                    container" data-ride="carousel"  >
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators"
                             data-slide-to="0" class="active"></li>
@@ -46,100 +47,46 @@
             </div>
 
 
+
         </div>
         <div class="container">
 
             <section>
                 <div class="row">
-                    <div class="col-md-3 border-right mb-small-5">
+                    <div class="col-md-3 border-right mb-small-5"  >
                         <div class="mb-5">
-                            <label><b>Choose your Category</b></label>
-                            <ul class="list-group">
+                        
+                            <label><b>Choose your Category:</b></label>
+                            <ul class="list-group" style = "background-color: #ADD8E6;">
 
-                                <a href="#" class="list-group-item
+                                <a style = "background-color: #ADD8E6;" href="{% url "after10" %}" class="list-group-item
                                     list-group-item-action">Class 10</a>
-                                <a href="#" class="list-group-item
-                                    list-group-item-action">Class 12</a>
-                                <a href="#" class="list-group-item
+                                <a style = "background-color: #ADD8E6;" href="{% url "after12arts" %}" class="list-group-item
+                                    list-group-item-action">Class 12 (ARTS)</a>
+                                <a style = "background-color: #ADD8E6;" href="{% url "after12commerce" %}" class="list-group-item
+                                    list-group-item-action">Class 12 (COMMERCE)</a>
+                                <a style = "background-color: #ADD8E6;" href="{% url "after12science" %}" class="list-group-item
+                                    list-group-item-action">Class 12 (SCIENCE)</a>
+                                <a style = "background-color: #ADD8E6;" href="#" class="list-group-item
                                     list-group-item-action">Graduate</a>
-                                <a href="#" class="list-group-item
+                                <a style = "background-color: #ADD8E6;" href="#" class="list-group-item
                                     list-group-item-action">Working Professional</a>
                             </ul>
                         </div>
                     </div>
                     <div class="col" style="margin-left: 30px;">
-                        <h2>Our Mission</h2>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia odio sequi aliquid alias ducimus. Libero perspiciatis quae veritatis harum enim deleniti, distinctio inventore aliquid, rerum repudiandae amet excepturi temporibus. Placeat debitis tempora voluptas! Voluptates fugiat facilis qui, id provident numquam laudantium? Nostrum, id reprehenderit tempore perspiciatis qui itaque, aut non minus voluptas vero, odit fugit dignissimos ut ipsum vel ipsa placeat nihil rem beatae quo. Consectetur facere libero sit nemo commodi! Saepe nisi culpa vel beatae officia. Porro recusandae dicta aliquid ipsum, facilis veniam accusantium quam debitis fuga inventore exercitationem itaque est architecto dolorem aliquam explicabo aperiam at qui adipisci nobis rerum magnam quaerat soluta? Neque aliquid iure</p>
+                    
+                    <div class="alert alert-primary" role="alert">
+   
+                        <h2 >Our Mission:</h2>
+                        <p>We have a unique assessment plan to understand the needs of students at each stage. We help students understand, evaluate and determine the most suitable career based on their suitability, multiple intelligences, interests, priorities, learning habits, learning styles, adjustment levels, ambitions and thought processes. When choosing a suitable career for students, our proprietary career recommendation engine also considers external factors such as opportunity, suitability, personal circumstances, budget, and demographic data. Combining these valuable insights, our experts are ready to lead your children into the future that suits them best.</p>
+                    </div>
                     </div>
                 </section>
             </div>
 
 
-            <!-- Footer -->
-            <footer class="bg-white">
-                <div class="container">
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <h3>About Us</h3>
-                            <p>We provide you the best solutions and
-                                creative ideas with HTML, CSS, Bootstrap,
-                                Javascript, Jquery technologies, and SEO.</p>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h3>Quick Links</h3>
-                            <ul>
-                                <li><a href="#">Link First</a></li>
-                                <li><a href="#">Link Second</a></li>
-                                <li><a href="#">Link Third</a></li>
-                                <li><a href="#">Link Fourth</a></li>
-                                <li><a href="#">Link Fifth</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h3>Our Services</h3>
-                            <ul>
-                                <li><a href="#">Link First</a></li>
-                                <li><a href="#">Link Second</a></li>
-                                <li><a href="#">Link Third</a></li>
-                                <li><a href="#">Link Fourth</a></li>
-                                <li><a href="#">Link Fifth</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <h3>Download App</h3>
-                            <div class="follow-us">
-                                <ul>
-                                    <li><a href="#"><i class="fab
-                                                fa-facebook-f"></i> Facebook</a></li>
-                                    <li><a href="#"><i class="fab
-                                                fa-twitter"></i> Twitter</a></li>
-                                    <li><a href="#"><i class="fab
-                                                fa-instagram"></i> Instagram</a></li>
-                                    <li><a href="#"><i class="fab
-                                                fa-linkedin-in"></i>
-                                            Linkedin</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copyright Text -->
-                <div class="copyright-txt">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="text-center">Copyright 2020. All
-                                    Rights Reserved</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+          
 
 
-
-{% endblock body_content%}
-         
+{% endblock %}

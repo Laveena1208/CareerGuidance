@@ -1,61 +1,129 @@
-
-
+from django.shortcuts import redirect, render
+from django.contrib.auth.forms import UserCreationForm
+from .models import User
+from django.contrib.auth.decorators import login_required
+from users.models import After10, After12Arts, After12Commerce, After12Science ,After10colleges, After12engcolleges, After12medicolleges,After12commcolleges,After12artscolleges
+from .forms import SignUpForm, LoginForm
 # Create your views here.
-from django.http import HttpResponse
-from django.shortcuts import render
-
-
-# def login(request):
-#     return render(request, 'login.html')
-    # return HttpResponse("hello")
-
-def login(request):
-    if request.method == 'GET':
-        return render(request,"login.html")
-
-    if request.method == 'POST':
-        form = request.form
-        username = form.get('username', None)
-        password = form.get('password', None)
-        if(Users.exists(username)):
-            user = Users.get_user_by_username(username)
-            if (check_password_hash(user.password, password)):
-                session['user'] = user.id
-                flash("You are Logged in", "success")
-                response = make_response(redirect(url_for('home')))
-            else:
-                flash("Incorrect Password", "info")
-                return redirect(url_for('login'))
-        else:
-                flash("Incorrect user credentials", "info")
-                return redirect(url_for('login'))
-
-def register(request):
-    if request.method == 'GET':
-        return render("register.html")
-    elif request.method == 'POST':
-        form = request.form
-        name = form.get('name',None)
-        username = form.get('username',None)
-        password = form.get('password',None)
-        if (username and name and password):
-            if(not Users.exists(username)):
-                password = generate_password_hash(password)
-                user = Users(username,password,name)
-                flash(f"{username} registered.\n Login to procced","success")
-                return redirect(url_for("login"))
-            else:
-                flash(f"{username} registered.\n already exit","danger")
-                return redirect(url_for("register"))
-        else:
-            flash("Please fill all the details","warning")
-            return redirect(url_for("register"))
-
-
-def register(request):
-    return render(request, 'register.html')
 
 def home(request):
-    return render(request, 'home.html')
+    count=User.objects.count()
+    context={
+        'count':count,
+    }
+    return render(request,'home.html',context)
+## yeh FUN banaye
+def login(request):
+    if request.method=='POST':
+        form=LoginForm(request.POST)
+        if form.is_valid():
+            email= form.cleaned_data.get("email")
+            password= form.cleaned_data.get("password")
+            try:
+                user= User.objects.get(email=email, password=password)
+                print(user.email)
+                print(user.password)
+                return render(request, 'home.html')
+            except User.DoesNotExist:
+                print("Invalid user!!")
+        return redirect('signup')
+    else:
+        print("method != POST")
+        form=  LoginForm()
+        context = {
+            'form':form,
+
+        }
+        return render(request, 'registration/login.html', context)
+    
+
+def signup(request):
+    if request.method=='POST':
+        form=SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form=  SignUpForm()
+    context = {
+        'form':form,
+    }
+    return render(request,'registration/signup.html',context)
+
+@login
+def after10(request):
+    questions=After10.objects.all()
+    context={
+        'questions':questions
+    }
+    return render(request, 'after10.html',context)
+
+@login
+def after12arts(request):
+    questions=After12Arts.objects.all()
+    context={
+        'questions':questions
+    }
+    return render(request, 'after12.html',context)
+
+
+def after12commerce(request):
+    questions=After12Commerce.objects.all()
+    context={
+        'questions':questions
+    }
+    return render(request, 'after12.html',context)
+
+def after12science(request):
+    questions=After12Science.objects.all()
+    context={
+        'questions':questions
+    }
+    return render(request, 'after12.html',context)
+
+def about(request):
+    return render(request, "about.html")
+
+def contact(request):
+    return render(request, "contact.html")
+
 
     
+def after10colleges(request):
+    colleges = After10colleges.objects.all()
+    context={
+        'colleges':colleges
+    }
+    return render(request, 'after10colleges.html',context)
+
+    
+def after12engcolleges(request):
+    colleges = After12engcolleges.objects.all()
+    context={
+        'colleges':colleges
+    }
+    return render(request, 'after12engcolleges.html',context)
+
+def after12medicolleges(request):
+    colleges = After12medicolleges.objects.all()
+    context={
+        'colleges':colleges
+    }
+    return render(request, 'after12medicolleges.html',context)
+
+
+def after12commcolleges(request):
+    colleges = After12commcolleges.objects.all()
+    context={
+        'colleges':colleges
+    }
+    return render(request, 'after12commcolleges.html',context)
+
+
+def after12artscolleges(request):
+    colleges = After12artscolleges.objects.all()
+    context={
+        'colleges':colleges
+    }
+    return render(request, 'after12artscolleges.html',context)
+
