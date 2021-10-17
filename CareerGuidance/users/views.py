@@ -50,7 +50,6 @@ def signup(request):
     }
     return render(request,'registration/signup.html',context)
 
-@login
 def after10(request):
     questions=After10.objects.all()
     context={
@@ -58,7 +57,7 @@ def after10(request):
     }
     return render(request, 'after10.html',context)
 
-@login
+
 def after12arts(request):
     questions=After12Arts.objects.all()
     context={
