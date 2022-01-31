@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 {%load static %} 
  
-<h1><center> After 10th Assessment Test...! </center></h1>
+<h1><center> After 12th Science Assessment Test...! </center></h1>
 
 <h2>Test Instructions:</h2>
 <p >This test consists of some questions that you will have to rate on the basis of how much you would enjoy performing each on a scale of (0) Dislike (1) Neutral (2) Enjoy This test will help you choose a career path based on your personality type and your interests in a particular field or subject.</p>
@@ -13,7 +13,7 @@
 <br><br><br><br>
 <h2><big><center>Begin your Assessment</center></big></h2>
 <h7> <center>(0) Dislike  (1) Neutral  (2) Enjoy</center> </h7>
-<form name="after10form" action = "{% url "after10result" %}" method = "POST">
+<form name="after12form" action = "{% url "after12sciresult" %}" method = "POST">
 	{% csrf_token %}
 	
 	<input type="hidden" id="questions" name="questions" value={{questions}} required>
@@ -41,7 +41,7 @@
 
 {% if flag %}
 alert("Congratulations! You have finished the evaluation of your career interests and you're well on your way to discovering your ideal career path.");
-document.location = "/users/after10result";
+document.location = "/users/after12sciresult";
 {%endif%}
 </script>     
 {% endblock %}

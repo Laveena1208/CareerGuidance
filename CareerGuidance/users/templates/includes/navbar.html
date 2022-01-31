@@ -39,33 +39,34 @@
           
           
       </li>
+    
     </ul> 
    
-        
-      {% if user.is_authenticated %}
+    
+      {% if form.is_valid %}
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
-          <a class="nav-link active" style = "font-size:20px;color:  #ADD8E6; text-shadow: 1px 1px white;" href="">Welcome, {{ User.email }}</a>
+          <a class="nav-link active" style = "font-size:20px;color:  #ADD8E6; text-shadow: 1px 1px white;" href="">Welcome, {{ user.email }}</a>
         </li>
         <li class="nav-item ">
           <a class="btn btn-success" style = "margin-left: 46px ; padding: 10px 15px; font-size: 20px"; href="{% url "logout" %}">Log Out</a>
         </li>
       </ul>
+      
       {% else %}
       <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a   class="btn btn-warning" style = "margin-right: -22px;  padding: 10px 15px; font-size: 20px" ; href="{% url "signup" %}">Register</a>
       </li>
       <li class="nav-item">
-        <a  class="btn btn-info" style = "margin-left: 46px; padding: 10px 15px; font-size: 20px" ;  href="login/">Login</a>
+        <a  class="btn btn-info" style = "margin-left: 46px; padding: 10px 15px; font-size: 20px" ;  href="{% url "login" %}">Login</a>
+      </li>
+      <li class="nav-item ">
+        <a class="btn btn-success" style = "margin-left: 46px ; padding: 10px 15px; font-size: 20px"; href="{% url "login" %}">Logout</a>
       </li>
     </ul>
-    
-      {% endif %}
+    {% endif %}
       
-    
-    
-  
   </div>
 </div>
 </nav>

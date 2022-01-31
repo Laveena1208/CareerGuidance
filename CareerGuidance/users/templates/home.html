@@ -77,16 +77,22 @@
                     <div class="col" style="margin-left: 30px;">
                     
                     <div class="alert alert-primary" role="alert">
-   
+                    {% comment %} <h2 style = "color:white;">User Name:{{ User.email }} </h2> {% endcomment %}
                         <h2 >Our Mission:</h2>
+                        <h4> Welcome, {{ user.email }} </h4>
                         <p>We have a unique assessment plan to understand the needs of students at each stage. We help students understand, evaluate and determine the most suitable career based on their suitability, multiple intelligences, interests, priorities, learning habits, learning styles, adjustment levels, ambitions and thought processes. When choosing a suitable career for students, our proprietary career recommendation engine also considers external factors such as opportunity, suitability, personal circumstances, budget, and demographic data. Combining these valuable insights, our experts are ready to lead your children into the future that suits them best.</p>
                     </div>
                     </div>
                 </section>
             </div>
+{% endblock %}
 
-
-          
-
-
+{% block 'js' %}
+<script>
+setTimeout(function(){
+    if($('#msg').length > 0){
+      $('#msg').remove();
+  }
+},2000)
+</script>          
 {% endblock %}

@@ -1,5 +1,26 @@
-INSERT INTO `users_after10` (`id`, `question`) VALUES (NULL, 'Test the quality of parts before shipment'), (NULL, 'Study the structure of the human body'), (NULL, 'Conduct a musical choir'), (NULL, 'Give career guidance to people'), (NULL, 'Sell restaurant franchises to individuals'), (NULL, 'Generate the monthly payroll checks for an office'), (NULL, 'Lay brick or tile'), (NULL, 'Study animal behavior'), (NULL, 'Direct a play'), (NULL, 'Do volunteer work at a non-profit organization'), (NULL, 'Sell merchandise at a department store'), (NULL, 'Inventory supplies using a hand-held computer'), (NULL, 'Work on an offshore oil-drilling rig'), (NULL, 'Do research on plants or animals'), (NULL, 'Design artwork for magazines'), (NULL, 'Help people who have problems with drugs or alcohol '), (NULL, 'Manage the operations of a hotel'), (NULL, 'Use a computer program to generate customer bills'), (NULL, 'Assemble electronic parts'), (NULL, 'Develop a new medical treatment or procedure'), (NULL, 'Write a song'), (NULL, 'Teach an individual an exercise routine'), (NULL, 'Operate a beauty salon or barber shop'), (NULL, 'Maintain employee records'), (NULL, 'Operate a grinding machine in a factory'), (NULL, 'Conduct biological research'), (NULL, 'Write books or plays'), (NULL, 'Help people with family-related problems'), (NULL, 'Manage a department within a large company'), (NULL, 'Compute and record statistical and other numerical data'), (NULL, 'Fix a broken faucet'), (NULL, 'Study whales and other types of marine life'), (NULL, 'Play a musical instrument'), (NULL, 'Supervise the activities of children at a camp'), (NULL, 'Manage a clothing store'), (NULL, 'Operate a calculator'), (NULL, 'Assemble products in a factory'), (NULL, 'Work in a biology lab'), (NULL, 'Perform stunts for a movie or television show'), (NULL, 'Teach children how to read'), (NULL, 'Sell houses'), (NULL, 'Handle customers bank transactions'), (NULL, 'Install flooring in houses'), (NULL, 'Make a map of the bottom of an ocean'), (NULL, 'Design sets for plays'), (NULL, 'Help elderly people with their daily activities'), (NULL, 'Run a toy store'), (NULL, 'Keep shipping and receiving records')
 
+INSERT INTO `users_after10` (`id`, `question`) VALUES
+ (NULL, 'Do you Enjoy reading technical materials and solving technical problems?'),
+ (NULL, 'Do you like film making?'), 
+(NULL, 'Do you show strong interest in how laws and regulations are designed and passed?'), 
+(NULL, 'Do you enjoy conducting experiments on chemicals and observing their reactions and physical theory? '),
+(NULL, 'Will you enjoy writing a book?'),
+(NULL, 'Do you like to maintain a monthly record of budget and  expenses?'),
+ (NULL, 'Do you like to learn/know the logic behind things happening in the surrounding? '),
+(NULL, 'Do you like to spend time in the library collecting information about world history,evolution etc?'), 
+(NULL, 'Do you like to read business newspapers? '), 
+(NULL, 'Are you interested in studying about space?'), 
+(NULL, 'Are you interested in crafts to create something artistic or to create DIY products ?'),
+ (NULL, 'Do you like to sell a product to someone ?'),
+(NULL, 'Do you have interest in knowing about medicines?'),
+ (NULL, 'Do you like to design dresses or jewellery?'), 
+(NULL, 'Are you interested in covering news and journalism?'),
+ (NULL, 'Do you like to learn a computer programming language ?'), 
+(NULL, 'Do you like to participate in community services or/volunteering?'), 
+(NULL, 'Do you like solving accounting problems?'), 
+(NULL, 'Do you enjoy developing a mobile based app?'), 
+(NULL, 'Do you like to entertain an audience as a comedian, magician, musician, actor?'),
+ (NULL, 'Can you help people in financial planning?');
 
 
 INSERT INTO `users_after12arts` (`id`, `question`) VALUES (NULL, 'Market a new line of clothing'), (NULL, 'Investigate crimes'), (NULL, ' Audition singers and musicians for a musical show'), (NULL, 'Edit movies'), (NULL, 'Take care of children at a day-care center'), (NULL, 'Teach a high-school class'), (NULL, 'Teach an individual an exercise routine'), (NULL, 'Write a song'), (NULL, 'Act in a play'), (NULL, 'Learn home decor');
